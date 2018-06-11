@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Coding Tips Tab</title>
+	<link href="https://fonts.googleapis.com/css?family=Oxygen:400" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/checkbox.css">
+	
+	<script src="js/lib/jquery-3.2.1.min.js"></script>
+	<script src="js/lib/showdown.min.js"></script>
+	<!-- <script src="js/lib/popper.min.js"></script> -->
+	<script src="js/lib/bootstrap.min.js"></script>
+
+	<script src="js/globals.js"></script>
+
+	<base target="_blank">
+	<script src="js/notifications.js"></script>
+	<script src="js/autoUpdateCourses.js"></script>
+</head>
+
+<body>
+	<section class="hidden msg">
+		<div class="msg-body code">
+		</div>
+	</section>
+	<section class="tip">
+		<div class="tip-number tip-heading">
+			Coding Tip
+		</div>
+
+		<div class="js-tip"> </div>
+		
+		<div class="row m-t-30px">
+			<!-- <div class="col-md-12" style="margin-top: 20px;">
+				<p>
+					<code class="source-course caps tag-code"></code>
+				</p>
+			</div> -->
+			<div class="col-xs-12">
+				<p class="pull-left" style="margin-top: 3rem;">
+					<code class="source-course caps tag-code"></code>
+				</p>
+				<div class="pull-right">
+					<span class="undo-btn"><i class="fa fa-undo"></i></span>
+					<button class="tip-button btn btn-sm">
+						Next
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="row m-t-30px">
+			<div class="col-xs-12">
+				<p>
+					<span class="course-author pull-right"></span>
+				</p>
+
+			</div>
+		</div>
+
+	</section>
+
+	<section class="hidden select-course full-width">
+		<div class="row">
+			<div class="tip-number col-md-12">
+				Select Courses:
+			</div>
+		</div>
+		<div class="row">
+			<div class="courses-list">
+			</div>
+		</div>
+		<div class="row">
+			<button class="tip-button btn pull-right" id="saveCourses">
+				Save
+			</button>
+			<div class="underline c-p pull-right close-btn" id="cancelSelectCourses">Cancel</div>
+		</div>
+	</section>
+
+	<section class="hidden downloading-course full-width">
+		<div class="row">
+			<div class="tip-number col-md-12">
+				Downloading Course:
+				<span id="downloadingCourseName" class="caps"></span>
+				<span id="downloadingProgress" class="caps"></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="courses-list">
+			</div>
+		</div>
+	</section>
+	
+	<section class="m-t-50px text-left hidden" id="notifications">
+		<div class="">
+			<code class="tag-code dblock">
+				<span class="notifMsg "></span><br>
+				<button class="btn btn-default pull-right m-t-10px" id="closeNotifs">Close</button>
+			</code>
+		</div>
+	</section>
+	<section class="m-t-100px text-center main-author f-s-10px">
+		<p>
+			<i class="fa fa-gear"></i>
+			<span class="underline c-p" id="showCourses">courses</span>. 
+			<span class="underline c-p" id="resetCache">reset</span>.
+			<i class="fa fa-heart"></i>
+			Made by <a href="https://twitter.com/sasi513">Sasikanth</a>- 
+			<i class="fa fa-coffee"></i>
+			Buy me <a href="https://www.paypal.me/KDronavalli/5usd">coffee.</a>
+		</p>
+	</section>
+	<!-- <script src="tips/git.js"></script> -->
+	<!-- <script src="tips/css.js"></script> -->
+	<script src="js/main.js"></script>
+
+	<script src="js/commonFunctions.js"></script>
+</body>
+</html>

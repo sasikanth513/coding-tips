@@ -1,0 +1,25 @@
+<head>
+  <title>scrape-questions</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+  <div class="container">
+    {{> hello}}
+  </div>
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+  {{#each questions}}
+    <div style="margin-top: 30px;">
+
+      <p style="background: tomato;padding: 5px;color: white;">{{index}} {{questionId}} {{{title}}}</p>
+      <button id="removeQuestion">Remove</button>
+      <p>
+        {{{body}}}
+      </p>
+    </div>
+  {{/each}}
+</template>

@@ -1,0 +1,178 @@
+body {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 16px;
+  background-color: #204056;
+  color: white;
+  letter-spacing: 0.05rem;
+  width: 100vw;
+  /*height: 100vh;*/
+  /*display: flex;*/
+  justify-content: center;
+  align-content: center;
+  /*width: 40rem;*/
+  width: 500px;
+  margin: 10vh auto;
+  /*letter-spacing: 1.5px;*/
+  line-height: 2.5rem;
+}
+
+a, a:hover, a:visited {
+  color: white;
+  text-decoration: underline;
+}
+
+button:focus{
+ outline:none !important;
+}
+
+.tip {
+  width: 100%;
+}
+
+.code {
+  font-family: monospace;
+  background-color: #336180;
+  /*background-color: #8899a6;*/
+  padding: 0.25rem 0.75rem;
+  /*font-size: 1.375rem;*/
+  border-radius: 0.15em;
+}
+
+.code-block, code {
+  color: white !important;
+  font-family: monaco, Consolas, "Lucida Console", monospace;
+  background-color: #336180;
+  padding: 0.5em 0.75em;
+  border-radius: 0.15rem;
+  display: block;
+  margin: 1rem 0;
+  overflow: auto;
+  display: inline;
+}
+
+pre code {
+  display: block;
+}
+
+.tip-number {
+  margin: auto;
+  margin-bottom: 2.5rem;
+  color: #CCCCCC;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: bolder;
+  /*font-size: 1rem;*/
+}
+
+.js-tip {
+  margin: auto;
+  /*line-height: 2rem;*/
+  font-weight: 300;
+  /*font-size: 1.375rem*/
+}
+
+.msg .code {
+  margin-bottom: 30px;
+  padding:15px;
+  font-family: inherit;
+}
+
+.tip-button, .tip-button:hover, .tip-button:visited, .tip-button:active {
+  background-color: #34B3A0;
+  outline: none;
+  padding: 10px 20px;
+  display: inline-block;
+  margin: auto;
+  /*font-size: 1rem;*/
+  margin-top: 2.5rem;
+  cursor: pointer;
+  font-weight: bolder;
+  border: none;
+  color: white !important;
+}
+
+.disabled {
+  background-color: #D8D8D8 !important;
+  color: #888;
+  cursor: not-allowed !important;
+}
+
+.hidden {
+  display: none;
+}
+.full-width {
+  width: 100%;
+}
+
+.courses-list .col-md-6 {
+  margin-bottom: 15px;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+p code {
+  display: inline;
+  margin: 0;
+  padding: 0px;
+}
+
+.tag-code {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.m-t-10px {
+  margin-top: 10px;
+}
+.m-t-30px {
+  margin-top: 30px;
+}
+.m-t-50px {
+  margin-top: 50px;
+}
+
+.m-t-100px {
+  margin-top: 100px;
+}
+
+.course-author {
+  font-size: 12px;
+}
+
+.main-author {
+  opacity: 0.6;
+}
+
+.f-s-10px {
+  font-size: 10px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.c-p {
+  cursor: pointer;
+}
+
+.close-btn {
+  margin-top: 3rem;
+  padding-right: 10px;
+}
+
+.dblock {
+  display: block !important;
+}
+
+.undo-btn {
+  cursor: pointer;
+  margin-right: 10px;
+  position: relative;
+  top: 10px;
+}
