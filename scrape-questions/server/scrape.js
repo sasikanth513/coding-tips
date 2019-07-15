@@ -10,17 +10,18 @@ const blockedQuestions = [
 ]
 
 const Future = require('fibers/future');
+const API_KEY = '';
 
 Meteor.methods({
   getAnsweridForQuestion(qId) {
     const fut = new Future();
     let questions = 0;
-    const answersURL = `https://api.stackexchange.com/2.2/questions/${qId}/answers?order=desc&sort=votes&site=stackoverflow&key=sPiAYn1bstS0kZde5pC5Yg((`
+    const answersURL = `https://api.stackexchange.com/2.2/questions/${qId}/answers?order=desc&sort=votes&site=stackoverflow&key=${API_KEY}((`
     const options = {
-      "npmRequestOptions" : {"gzip" : true}
+      "npmRequestOptions": { "gzip": true }
     };
 
-    HTTP.get(answersURL, options, function(err, res) {
+    HTTP.get(answersURL, options, function (err, res) {
       if (err) {
         fut.return(false)
       } else {
@@ -38,12 +39,12 @@ Meteor.methods({
     const fut = new Future();
     ids = ids.join(';');
     let questions = 0;
-    const answersURL = `https://api.stackexchange.com/2.2/answers/${ids}?order=desc&sort=votes&site=stackoverflow&key=sPiAYn1bstS0kZde5pC5Yg((&filter=withbody`
+    const answersURL = `https://api.stackexchange.com/2.2/answers/${ids}?order=desc&sort=votes&site=stackoverflow&key=${API_KEY}((&filter=withbody`
     const options = {
-      "npmRequestOptions" : {"gzip" : true}
+      "npmRequestOptions": { "gzip": true }
     };
 
-    HTTP.get(answersURL, options, function(err, res) {
+    HTTP.get(answersURL, options, function (err, res) {
       if (err) {
         console.log('error ');
         console.log(err);
@@ -59,13 +60,13 @@ Meteor.methods({
     const fut = new Future();
 
     let questions = 0;
-    const questionsUrl = `https://api.stackexchange.com/2.2/questions?order=desc&sort=votes&tagged=${tag}&site=stackoverflow&page=${page}&key=sPiAYn1bstS0kZde5pC5Yg((`
+    const questionsUrl = `https://api.stackexchange.com/2.2/questions?order=desc&sort=votes&tagged=${tag}&site=stackoverflow&page=${page}&key=${API_KEY}((`
     console.log(questionsUrl);
     const options = {
-      "npmRequestOptions" : {"gzip" : true}
+      "npmRequestOptions": { "gzip": true }
     };
 
-    HTTP.get(questionsUrl, options, function(err, res) {
+    HTTP.get(questionsUrl, options, function (err, res) {
       if (err) {
         console.log('error ');
         console.log(err);
@@ -93,7 +94,7 @@ Meteor.methods({
       let canScrape = true;
 
       while (count < 150 && canScrape) {
-        page ++;
+        page++;
         console.log(count, canScrape, page);
         const res = Meteor.call('getQuestionsWithTagName', course.tag, page);
         if (res && res.type === 'success' && res.data && res.data.data && res.data.data.items.length > 0) {
@@ -101,7 +102,7 @@ Meteor.methods({
 
           count += items.length;
           const out = [];
-          items.forEach(function ({title, question_id, accepted_answer_id}) {
+          items.forEach(function ({ title, question_id, accepted_answer_id }) {
             if (!accepted_answer_id) {
               const answerIdForQues = Meteor.call('getAnsweridForQuestion', question_id);
               if (answerIdForQues) {
@@ -136,7 +137,7 @@ Meteor.methods({
       // get answers for each question
       let total = answerIds.length;
 
-      while(answerIds.length > 0) {
+      while (answerIds.length > 0) {
         let max = 30;
         if (answerIds.length < 30) {
           max = answerIds.length;
@@ -164,13 +165,13 @@ Meteor.methods({
     return true;
   },
   pullAnswersForMissingQuestions() {
-    let answerIds = Questions.find({ body: { $exists: false }}).map(obj => obj.answerId);
+    let answerIds = Questions.find({ body: { $exists: false } }).map(obj => obj.answerId);
 
     // console.log(qIds);
 
     let total = answerIds.length;
 
-    while(answerIds.length > 0) {
+    while (answerIds.length > 0) {
       let max = 30;
       if (answerIds.length < 30) {
         max = answerIds.length;
