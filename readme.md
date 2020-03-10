@@ -1,4 +1,4 @@
-Coding Tips - Chrome extension
+Coding Tips - Chrome extension[https://github.com/sasikanth513/coding-tips]
 
 Folders
 -------------
